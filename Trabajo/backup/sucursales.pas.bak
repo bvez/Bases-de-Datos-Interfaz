@@ -128,8 +128,8 @@ end;
 
 procedure TForm1.BotonDeleteClientClick(Sender: TObject);
 begin
-
-  PanelDeleteClient.Visible:=False;
+  PanelCliente.Visible:=False;
+  PanelDeleteClient.Visible:=True;
 
 end;
 
@@ -179,7 +179,8 @@ procedure TForm1.Button7Click(Sender: TObject);
 begin
   if (NCodClient.Text<>'') and (NRazSoc.Text<>'') and (NDireccion.Text<>'') and (NClasVent.Text<>'')
      and (NMontVenc.Text<>'') and (NVentAnt.Text<>'') and (NCFormPago.Text<>'') then begin
-           //insertar codigo SQL
+          {ScriptAscender.Script.Text:='CALL INSERTAR_CLIENTE('''+NCodClient.Text+''','+NRazSoc.Text+','
+          NDireccion.Text+','+NClasVent.Text+','+;}
      end
   else ShowMessage('Inserte información en los campos obligatorios.');
 end;

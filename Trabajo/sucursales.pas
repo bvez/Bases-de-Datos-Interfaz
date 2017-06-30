@@ -116,7 +116,7 @@ procedure TForm1.Button1Click(Sender: TObject);
 begin
   if Edit1.Text <> '' then begin
      sucursales2.DataAccessSucursales.ConsultaEmpleadosSucursal.Active:=False;
-     sucursales2.DataAccessSucursales.ConsultaEmpleadosSucursal.SQL.Text:='SELECT * FROM EMPLEADO WHERE CSUCUR =' + Edit1.Text;
+     sucursales2.DataAccessSucursales.ConsultaEmpleadosSucursal.SQL.Text:='SELECT * FROM EMPLEADO WHERE CSUCUR = ' + Edit1.Text;
      sucursales2.DataAccessSucursales.ConsultaEmpleadosSucursal.Active:=True;
   end
   else begin
@@ -179,7 +179,8 @@ procedure TForm1.Button7Click(Sender: TObject);
 begin
   if (NCodClient.Text<>'') and (NRazSoc.Text<>'') and (NDireccion.Text<>'') and (NClasVent.Text<>'')
      and (NMontVenc.Text<>'') and (NVentAnt.Text<>'') and (NCFormPago.Text<>'') then begin
-           //insertar codigo SQL
+          {ScriptAscender.Script.Text:='CALL INSERTAR_CLIENTE('''+NCodClient.Text+''','+NRazSoc.Text+','
+          NDireccion.Text+','+NClasVent.Text+','+;}
      end
   else ShowMessage('Inserte información en los campos obligatorios.');
 end;
